@@ -24,11 +24,11 @@ export default function RarityFilter({
                             isActive
                                 ? 'bg-gold text-background border-transparent font-medium'
                                 : 'bg-background border-line text-foreground hover:border-slate-600'
-                        } border py-3 px-5.5 rounded-full cursor-pointer transition-colors flex items-center gap-2`}>
+                        } border py-2 px-3.5 sm:py-3 sm:px-5.5 rounded-full cursor-pointer transition-colors flex items-center gap-2`}>
                         <div
                             style={{ backgroundColor: rarity.color }}
-                            className="size-2.5 rounded-full"></div>
-                        <span className="text-[14px]">{rarity.name}</span>
+                            className="size-2 sm:size-2.5 rounded-full shrink-0"></div>
+                        <span className="text-xs sm:text-[14px]">{rarity.name}</span>
                     </button>
                 );
             })}
