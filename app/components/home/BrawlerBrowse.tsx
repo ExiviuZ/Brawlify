@@ -18,7 +18,6 @@ export default function BrawlerBrowse({
 }: BrawlerBrowseProps) {
     const [searchQuery, setSearchQuery] = useState('');
     const [selectedRarity, setSelectedRarity] = useState('All');
-
     const filterOptions = [
         { id: 0, name: 'All', color: '#94a3b8' },
         ...rarities,

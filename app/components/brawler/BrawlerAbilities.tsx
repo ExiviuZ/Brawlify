@@ -17,17 +17,18 @@ export function SectionHeading({
 }) {
     return (
         <div className={`flex items-baseline justify-between ${className}`}>
-            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl">{title}</h2>
-            <span className="text-xs sm:text-sm text-muted">{count} abilities</span>
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl">
+                {title}
+            </h2>
+            <span className="text-xs sm:text-sm text-muted">
+                {count} abilities
+            </span>
         </div>
     );
 }
 
 export default function BrawlerAbilities({ brawler }: BrawlerAbilitiesProps) {
-    const rows = Math.max(
-        brawler.starPowers.length,
-        brawler.gadgets.length,
-    );
+    const rows = Math.max(brawler.starPowers.length, brawler.gadgets.length);
 
     return (
         <section
@@ -46,8 +47,13 @@ export default function BrawlerAbilities({ brawler }: BrawlerAbilitiesProps) {
                     tag={`STAR POWER ${i + 1}`}
                     accent="#ffd23f"
                     gradient="linear-gradient(135deg,#1a1e3d,#232859)"
-                    className="md:col-start-1 md:[grid-row:var(--r)]"
-                    style={{ '--r': i + 2 } as CSSProperties}
+                    className="animate-rise md:col-start-1 md:[grid-row:var(--r)]"
+                    style={
+                        {
+                            animationDelay: `${i * 90}ms`,
+                            '--r': i + 2,
+                        } as CSSProperties
+                    }
                 />
             ))}
 
@@ -64,8 +70,13 @@ export default function BrawlerAbilities({ brawler }: BrawlerAbilitiesProps) {
                     tag={`GADGET ${i + 1}`}
                     accent="#2edd1d"
                     gradient="linear-gradient(135deg,#1a1e3d,#1f3a3a)"
-                    className="md:col-start-2 md:[grid-row:var(--r)]"
-                    style={{ '--r': i + 2 } as CSSProperties}
+                    className="animate-rise md:col-start-2 md:[grid-row:var(--r)]"
+                    style={
+                        {
+                            animationDelay: `${i * 90}ms`,
+                            '--r': i + 2,
+                        } as CSSProperties
+                    }
                 />
             ))}
         </section>

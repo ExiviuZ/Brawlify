@@ -3,7 +3,6 @@ import apiFetch from '@/lib/api';
 import { BrawlersResponse } from '@/types/brawler';
 import BrawlerHero from './components/home/BrawlerHero';
 import BrawlerBrowse from './components/home/BrawlerBrowse';
-
 export default async function HomePage() {
     const data = await apiFetch<BrawlersResponse>('/brawlers');
 
