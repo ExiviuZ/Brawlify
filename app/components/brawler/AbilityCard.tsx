@@ -52,14 +52,14 @@ export default function AbilityCard({
             />
             <div className="flex min-w-0 flex-col gap-1.5">
                 <span
-                    className="text-xs font-semibold tracking-[1.5px]"
+                    className="text-[11px] sm:text-xs font-semibold tracking-[1px] sm:tracking-[1.5px]"
                     style={{ color: accent }}>
                     {tag}
                 </span>
-                <h3 className="font-display text-xl sm:text-2xl md:text-[28px] leading-tight break-words">
+                <h3 className="font-display text-lg sm:text-2xl md:text-[28px] leading-tight break-words">
                     {ability.name}
                 </h3>
-                <p className="text-sm sm:text-[15px] leading-relaxed text-soft">
+                <p className="text-xs sm:text-sm md:text-[15px] leading-relaxed text-soft">
                     <Description text={ability.description} />
                 </p>
             </div>

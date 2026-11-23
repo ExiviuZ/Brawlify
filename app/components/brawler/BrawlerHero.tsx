@@ -22,10 +22,10 @@ export default function BrawlerHero({
                 <span className="inline-block bg-gold text-background text-[11px] sm:text-[12px] font-bold tracking-wider uppercase px-3.5 py-1 sm:px-4 sm:py-1.5 rounded-full">
                     THE ROSTER
                 </span>
-                <h1 className="text-4xl sm:text-6xl md:text-[78px] font-display leading-none break-words">
+                <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-[78px] font-display leading-none break-words">
                     All Brawlers
                 </h1>
-                <p className="text-base sm:text-[18px] text-white/90 max-w-xl">
+                <p className="text-sm sm:text-base md:text-[18px] text-white/90 max-w-xl">
                     Star powers, gadgets and lore for every fighter in the game,
                     newest first.
                 </p>
@@ -37,10 +37,10 @@ export default function BrawlerHero({
                     <div
                         key={stat.label}
                         className="flex flex-col items-center justify-center bg-[#1b1438]/60 border border-white/10 rounded-2xl sm:rounded-[24px] px-5 py-4 sm:px-8 sm:py-6 min-w-[95px] sm:min-w-[130px] flex-1 sm:flex-initial">
-                        <span className="text-3xl sm:text-4xl md:text-[48px] text-gold font-display leading-none">
+                        <span className="text-2xl sm:text-3xl md:text-[48px] text-gold font-display leading-none">
                             {stat.value}
                         </span>
-                        <span className="text-xs sm:text-[14px] text-white/80 mt-1 sm:mt-2">
+                        <span className="text-[11px] sm:text-[14px] text-white/80 mt-1 sm:mt-2">
                             {stat.label}
                         </span>
                     </div>

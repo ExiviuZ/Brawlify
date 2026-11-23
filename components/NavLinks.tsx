@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 
 const navItems = [
-    { label: 'Brawlers', href: '/' },
+    { label: 'Brawlers', href: '/brawlers' },
     { label: 'Maps', href: '/projects' },
     { label: 'Modes', href: '/about' },
     { label: 'Icons', href: '/icons' },
@@ -14,7 +14,7 @@ export default function NavLinks() {
     const pathname = usePathname();
 
     return (
-        <ul className="font-medium flex gap-3.5 sm:gap-6 text-sm sm:text-base">
+        <ul className="font-medium flex gap-2.5 sm:gap-4 md:gap-6 text-xs sm:text-sm md:text-base">
             {navItems.map(nav => {
                 const isActive =
                     nav.href === '/'

@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Brawler } from '@/types/brawler';
 import FavoriteButton from '@/components/FavoriteButtonInner';
+import PillButton from '@/components/PillButton';
 interface BrawlerHeaderProps {
     brawler: Brawler;
 }
@@ -49,6 +50,7 @@ export default function BrawlerHeader({ brawler }: BrawlerHeaderProps) {
                         <li className="relative size-10 sm:size-12">
                             <Image
                                 src={brawler.imageUrl3}
+                                className="object-contain"
                                 alt=""
                                 fill
                                 sizes="48px"
@@ -56,7 +58,7 @@ export default function BrawlerHeader({ brawler }: BrawlerHeaderProps) {
                         </li>
                     </ul>
 
-                    <h1 className="font-display text-4xl sm:text-6xl md:text-7xl lg:text-[100px] xl:text-[120px] leading-none break-words mt-3 sm:mt-4">
+                    <h1 className="font-display text-3xl sm:text-5xl md:text-7xl lg:text-[100px] xl:text-[120px] leading-none break-words mt-3 sm:mt-4">
                         {brawler.name}
                     </h1>
 
@@ -64,21 +66,20 @@ export default function BrawlerHeader({ brawler }: BrawlerHeaderProps) {
                         {paragraphs.map((text, i) => (
                             <p
                                 key={i}
-                                className="text-base sm:text-lg md:text-[19px] leading-relaxed text-soft">
+                                className="text-sm sm:text-base md:text-[19px] leading-relaxed text-soft">
                                 {text}
                             </p>
                         ))}
                     </div>
 
-                    <div className="flex gap-3">
-                        <a
+                    <div className="flex flex-wrap gap-3">
+                        <PillButton
                             href={brawler.link}
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="mt-6 inline-flex w-max items-center gap-2 rounded-full bg-gold px-5 py-2.5 sm:px-6 sm:py-3 text-sm sm:text-[15px] font-bold text-background shadow-[0_5px_0_#b8860b] transition-all hover:-translate-y-0.5 hover:shadow-[0_7px_0_#b8860b] active:translate-y-1 active:shadow-[0_1px_0_#b8860b]">
-                            View on Brawlify
-                            <span aria-hidden="true">↗</span>
-                        </a>
+                            className="mt-4 sm:mt-6">
+                            View on Brawlify <span aria-hidden="true">↗</span>
+                        </PillButton>
 
                         <FavoriteButton id={brawler.id} />
                     </div>

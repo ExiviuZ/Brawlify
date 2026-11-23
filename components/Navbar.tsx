@@ -10,13 +10,13 @@ export default function Navbar() {
             <nav className="flex justify-between items-center gap-4">
                 <Link
                     href="/"
-                    className="text-2xl sm:text-[30px] font-display text-gold text-shadow-[0_3px_0_#7a5a00]">
+                    className="text-xl sm:text-2xl md:text-[30px] font-display text-gold text-shadow-[0_3px_0_#7a5a00]">
                     BrawlDex
                 </Link>
 
                 <Suspense
                     fallback={
-                        <ul className="font-medium flex gap-3.5 sm:gap-6 text-sm sm:text-base text-muted">
+                        <ul className="font-medium flex gap-2.5 sm:gap-4 md:gap-6 text-xs sm:text-sm md:text-base text-muted">
                             {fallbackItems.map(label => (
                                 <li key={label}>{label}</li>
                             ))}

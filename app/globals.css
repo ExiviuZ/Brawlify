@@ -31,7 +31,7 @@
     }
 
     .rarity-pill {
-        @apply bg-[#0f1226] rounded-full text-xs sm:text-[13px] py-1.5 px-3 flex items-center w-max gap-2;
+        @apply bg-[#0f1226] rounded-full text-[11px] sm:text-[13px] py-1 px-2.5 sm:py-1.5 sm:px-3 flex items-center w-max gap-1.5 sm:gap-2;
     }
 }
 

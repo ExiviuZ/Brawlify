@@ -18,7 +18,7 @@ export default function Loading() {
             </div>
 
             {/* Title */}
-            <h2 className="text-2xl sm:text-3xl font-extrabold uppercase tracking-widest text-[#ffce00] drop-shadow-[0_3px_0_#0d1030]">
+            <h2 className="text-xl sm:text-2xl md:text-3xl font-extrabold uppercase tracking-wider sm:tracking-widest text-[#ffce00] drop-shadow-[0_3px_0_#0d1030]">
                 Loading
                 <span className="inline-flex w-8 justify-start">
                     {[0, 1, 2].map(i => (

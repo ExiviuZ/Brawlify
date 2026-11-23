@@ -10,18 +10,13 @@ interface BrawlerProps {
 export default function BrawlerCard({ brawler }: BrawlerProps) {
     return (
         <article
-            style={
-                {
-                    '--rarity-color': brawler.rarity.color,
-                } as React.CSSProperties
-            }
-            className="group relative rounded-3xl border border-line overflow-hidden transition-all hover:-translate-y-3.75 hover:border-(--rarity-color) focus-within:border-(--rarity-color)">
-            <div className="h-58.75 w-58.75 relative">
+            className="group relative flex flex-col rounded-3xl border border-line overflow-hidden transition duration-200 hover:-translate-y-1.5 hover:border-gold hover:shadow-[0_18px_40px_rgba(0,0,0,.45)] focus-within:border-gold">
+            <div className="relative aspect-square w-full">
                 <Image
                     src={brawler.imageUrl2}
                     alt={brawler.name}
-                    className="object-[center_30%]"
-                    sizes="235px"
+                    className="object-[center_30%] transition-transform duration-300 group-hover:scale-105"
+                    sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 235px"
                     fill
                 />
                 {/* Sibling to Link, elevated with z-10 so it intercepts clicks cleanly */}
@@ -30,7 +25,7 @@ export default function BrawlerCard({ brawler }: BrawlerProps) {
                 </div>
             </div>
 
-            <div className="p-3.5 sm:p-5 bg-surface flex gap-2.5 sm:gap-3.5 h-full">
+            <div className="p-3.5 sm:p-5 bg-surface flex gap-2.5 sm:gap-3.5 flex-1">
                 <div className="aspect-square w-full size-10 sm:size-12 relative max-w-10 sm:max-w-12 shrink-0">
                     <Image
                         alt={brawler.name}
@@ -42,10 +37,10 @@ export default function BrawlerCard({ brawler }: BrawlerProps) {
                 </div>
 
                 <div className="min-w-0 flex-1">
-                    <h3 className="text-lg sm:text-xl md:text-[24px] font-display leading-tight truncate">
+                    <h3 className="text-sm sm:text-base md:text-xl lg:text-[24px] font-display leading-tight truncate">
                         {/* Stretched link covers the entire <article> via after:inset-0 */}
                         <Link
-                            href={`/brawler/${brawler.id}`}
+                            href={`/brawlers/${brawler.id}`}
                             className="after:absolute after:inset-0 focus:outline-none">
                             {brawler.name}
                         </Link>
@@ -63,7 +58,7 @@ export default function BrawlerCard({ brawler }: BrawlerProps) {
                             </span>
                         </div>
                         <div>
-                            <span className="text-xs sm:text-[13px] text-muted">
+                            <span className="text-[11px] sm:text-[13px] text-muted">
                                 {brawler.class.name}
                             </span>
                         </div>

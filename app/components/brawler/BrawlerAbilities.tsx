@@ -17,7 +17,7 @@ export function SectionHeading({
 }) {
     return (
         <div className={`flex items-baseline justify-between ${className}`}>
-            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl">
+            <h2 className="font-display text-xl sm:text-2xl md:text-4xl">
                 {title}
             </h2>
             <span className="text-xs sm:text-sm text-muted">

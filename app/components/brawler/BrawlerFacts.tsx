@@ -26,7 +26,7 @@ export default function BrawlerFacts({ brawler }: BrawlerFactsProps) {
                 <div
                     key={f.label}
                     className="rounded-2xl sm:rounded-3xl border border-line bg-surface px-4 py-4 sm:px-5 sm:py-6">
-                    <p className="text-xs sm:text-[13px] font-semibold uppercase tracking-[1.5px] text-muted">
+                    <p className="text-[11px] sm:text-[13px] font-semibold uppercase tracking-[1px] sm:tracking-[1.5px] text-muted">
                         {f.label}
                     </p>
                     <div className="flex items-center gap-2.5 sm:gap-3 mt-1">
@@ -36,7 +36,7 @@ export default function BrawlerFacts({ brawler }: BrawlerFactsProps) {
                                 style={{ backgroundColor: f.dot }}
                             />
                         )}
-                        <p className="font-display text-xl sm:text-2xl md:text-[28px] truncate">
+                        <p className="font-display text-base sm:text-xl md:text-[28px] truncate">
                             {f.value}
                         </p>
                     </div>
