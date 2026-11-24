@@ -1,12 +1,36 @@
 import { cacheLife } from 'next/cache';
 import apiFetch from '@/lib/api';
 import { Brawler } from '@/types/brawler';
+import { GameMode } from '@/types/gamemodes';
+import { MapsResponse } from '@/types/maps';
 
 export async function getBrawlers() {
     'use cache';
     cacheLife('hours');
     const { list } = await apiFetch<{ list: Brawler[] }>('/brawlers');
     return list; // newest first
+}
+
+export async function getGameModes() {
+    'use cache';
+    cacheLife('hours');
+    const { list } = await apiFetch<{ list: GameMode[] }>('/gamemodes');
+    return list;
+}
+
+// Only 3 maps and one number are cached, not the whole 1,300-entry list.
+export async function getFeaturedMaps() {
+    'use cache';
+    cacheLife('hours');
+    const { list } = await apiFetch<MapsResponse>('/maps');
+
+    const active = list.filter(m => !m.disabled);
+    const fresh = active.filter(m => m.new);
+    // Prefer maps flagged new, otherwise the highest ids (the list is ascending)
+    const pool = fresh.length >= 3 ? fresh : active;
+    const maps = pool.slice(-3).reverse();
+
+    return { maps, total: list.length };
 }
 
 // Only the counts leave this function, so the cache holds three numbers,

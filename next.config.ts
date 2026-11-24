@@ -14,6 +14,13 @@ const nextConfig: NextConfig = {
                 pathname: '/**',
                 search: '',
             },
+            {
+                protocol: 'https',
+                hostname: 'cdn-misc.brawlify.com',
+                port: '',
+                pathname: '/**',
+                search: '',
+            },
         ],
     },
     cacheComponents: true,
