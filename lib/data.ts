@@ -18,6 +18,13 @@ export async function getGameModes() {
     return list;
 }
 
+export async function getAllMaps() {
+    'use cache';
+    cacheLife('hours');
+    const { list } = await apiFetch<MapsResponse>('/maps');
+    return list;
+}
+
 // Only 3 maps and one number are cached, not the whole 1,300-entry list.
 export async function getFeaturedMaps() {
     'use cache';

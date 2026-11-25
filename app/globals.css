@@ -33,6 +33,10 @@
     .rarity-pill {
         @apply bg-[#0f1226] rounded-full text-[11px] sm:text-[13px] py-1 px-2.5 sm:py-1.5 sm:px-3 flex items-center w-max gap-1.5 sm:gap-2;
     }
+
+    .pill-gold {
+        @apply max-w-max rounded-full bg-gold px-3.5 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-[13px] font-semibold tracking-[1.5px] sm:tracking-[2px] text-background uppercase;
+    }
 }
 
 @theme {
@@ -46,6 +50,12 @@
             opacity: 1;
             transform: none;
         }
+    }
+
+    --animate-shimmer: shimmer 1.6s ease-in-out infinite;
+    @keyframes shimmer {
+        0%   { background-position: -200% center; }
+        100% { background-position:  200% center; }
     }
 }
 

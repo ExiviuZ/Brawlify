@@ -8,9 +8,7 @@ export default function HeroSection() {
             aria-labelledby="hero-heading"
             className="flex flex-wrap items-center gap-16">
             <div className="flex flex-1 basis-130 flex-col gap-7">
-                <p className="max-w-max rounded-full bg-gold px-3.5 py-1.5 sm:px-4 sm:py-2 text-xs sm:text-[13px] font-semibold tracking-[1.5px] sm:tracking-[2px] text-background">
-                    A FREE BRAWL STARS COMPANION
-                </p>
+                <p className="pill-gold">A free brawl stars companion</p>
 
                 <h1
                     id="hero-heading"

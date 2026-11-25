@@ -6,7 +6,7 @@ const fallbackItems = ['Brawlers', 'Maps', 'Modes', 'Icons'];
 
 export default function Navbar() {
     return (
-        <header className="wrapper py-4 sm:py-8 md:py-10">
+        <header className="wrapper py-4 sm:py-8 md:py-10 sticky top-0 z-1000 bg-background">
             <nav className="flex flex-wrap md:flex-nowrap justify-between items-center gap-y-3 gap-x-4">
                 <Link
                     href="/"

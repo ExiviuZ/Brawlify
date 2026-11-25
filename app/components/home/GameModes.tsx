@@ -35,7 +35,7 @@ export default async function GameModes() {
                     style={{
                         background: `radial-gradient(500px 280px at 85% 10%, ${lead.color}8c, transparent 70%), repeating-linear-gradient(135deg, rgba(255,255,255,.05) 0 24px, transparent 24px 48px), linear-gradient(135deg, ${lead.bgColor} 0%, #2a1f5e 120%)`,
                     }}>
-                    <div className="absolute -top-10 right-7 size-52 rotate-8">
+                    <div className="absolute -top-10 right-7 size-30 md:size-40 lg:size-52 rotate-8">
                         <Image
                             src={lead.imageUrl}
                             alt=""

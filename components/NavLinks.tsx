@@ -7,9 +7,10 @@ import { useFavoriteStore } from '@/app/stores/favorite-store';
 
 const navItems = [
     { label: 'Brawlers', href: '/brawlers' },
-    { label: 'Maps', href: '/projects' },
+    { label: 'Maps', href: '/maps' },
     { label: 'Modes', href: '/about' },
     { label: 'Icons', href: '/icons' },
+    { label: 'Feedback', href: '/feedback' },
 ];
 
 export default function NavLinks() {
@@ -17,7 +18,7 @@ export default function NavLinks() {
     const favoriteBrawlers = useFavoriteStore(state => state.favoriteBrawlers);
 
     return (
-        <ul className="font-medium flex items-center gap-2 sm:gap-4 md:gap-6 text-xs sm:text-sm md:text-base">
+        <ul className="font-medium flex flex-wrap items-center gap-2 sm:gap-4 md:gap-6 text-xs sm:text-sm md:text-base">
             {navItems.map(nav => {
                 const isActive =
                     nav.href === '/'
@@ -30,7 +31,7 @@ export default function NavLinks() {
                         className="shrink-0">
                         <Link
                             href={nav.href}
-                            className={isActive ? '' : 'text-muted'}>
+                            className={`${isActive ? 'bg-gold px-6 py-2 text-background rounded-full' : 'text-muted'}`}>
                             {nav.label}
                         </Link>
                     </li>
@@ -40,7 +41,7 @@ export default function NavLinks() {
                 <Heart
                     strokeWidth={2.4}
                     color="#FF2056"
-                    className="size-4 sm:size-[22px] fill-rose-500 shrink-0"
+                    className="size-4 sm:size-5.5 fill-rose-500 shrink-0"
                 />
                 <span className="hidden sm:inline">Favorites</span>
                 <span className="text-[11px] sm:text-[13px] leading-none text-background font-semibold bg-[#ff4d6d] rounded-full min-w-[18px] h-[18px] sm:min-w-[22px] sm:h-[22px] px-1.5 inline-flex items-center justify-center shrink-0">
